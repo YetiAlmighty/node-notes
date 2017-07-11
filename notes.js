@@ -24,6 +24,7 @@ let addNote = (title, body) => {
 let getAll = () => {
     console.log('Getting all notes');
     fs.readdir(__dirname + '/notes', (err, files) => {
+
         files.forEach( file => {
             getNote(file);
         });
@@ -39,8 +40,12 @@ let getNote = (title) => {
         if(err){
             return console.log(`Can't read note ${title}`.red);
         }
-        let note = JSON.parse(data);
-        console.log(colors.cyan(note.title) + ' :\n',  colors.bgCyan(note.body));
+        let notes = JSON.parse(data);
+        console.log(colors.yellow(notes[0].title));
+        notes.forEach( (note, index) => {
+            console.log((index + 1)+ ': ' + colors.bgCyan(note.body));
+        })
+        console.log('===================');
     });
 };
 
