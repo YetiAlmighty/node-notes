@@ -10,7 +10,7 @@
   "license": "ICS",
   "dependencies": {
     "colors": "^1.1.2",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.17",
     "yargs": "^8.0.2"
   }
 }
